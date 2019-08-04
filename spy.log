@@ -1,0 +1,183 @@
+#1564923264248 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+
+    drop table book_category if exists
+
+    drop table book_category if exists;
+#1564923264249 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+
+    drop table books if exists
+
+    drop table books if exists;
+#1564923264249 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+
+    drop sequence if exists book_category_generator
+
+    drop sequence if exists book_category_generator;
+#1564923264250 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+
+    drop sequence if exists book_id_generator
+
+    drop sequence if exists book_id_generator;
+#1564923264254 | took 1ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+create sequence book_category_generator start with 1 increment by 50
+create sequence book_category_generator start with 1 increment by 50;
+#1564923264255 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+create sequence book_id_generator start with 1 increment by 50
+create sequence book_id_generator start with 1 increment by 50;
+#1564923264261 | took 5ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+
+    create table book_category (
+       id bigint not null,
+        name varchar(255) not null,
+        primary key (id)
+    )
+
+    create table book_category (
+       id bigint not null,
+        name varchar(255) not null,
+        primary key (id)
+    );
+#1564923264262 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+
+    create table books (
+       id bigint not null,
+        book_name varchar(255) not null,
+        isbn varchar(255) not null,
+        book_category_id bigint,
+        primary key (id)
+    )
+
+    create table books (
+       id bigint not null,
+        book_name varchar(255) not null,
+        isbn varchar(255) not null,
+        book_category_id bigint,
+        primary key (id)
+    );
+#1564923264271 | took 8ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+
+    alter table books 
+       add constraint FKdkb2mmtmwx9wr6kqlw4y69xg 
+       foreign key (book_category_id) 
+       references book_category
+
+    alter table books 
+       add constraint FKdkb2mmtmwx9wr6kqlw4y69xg 
+       foreign key (book_category_id) 
+       references book_category;
+#1564923264952 | took 1ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+INSERT INTO BOOK_CATEGORY (ID,NAME) VALUES (1L,'Autobiography')
+INSERT INTO BOOK_CATEGORY (ID,NAME) VALUES (1L,'Autobiography');
+#1564923264952 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+INSERT INTO BOOK_CATEGORY (ID,NAME) VALUES (2L,'Cookbook')
+INSERT INTO BOOK_CATEGORY (ID,NAME) VALUES (2L,'Cookbook');
+#1564923264952 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+INSERT INTO BOOK_CATEGORY (ID,NAME) VALUES (3L,'Crime')
+INSERT INTO BOOK_CATEGORY (ID,NAME) VALUES (3L,'Crime');
+#1564923264952 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+INSERT INTO BOOK_CATEGORY (ID,NAME) VALUES (4L,'Drama')
+INSERT INTO BOOK_CATEGORY (ID,NAME) VALUES (4L,'Drama');
+#1564923264952 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+INSERT INTO BOOK_CATEGORY (ID,NAME) VALUES (5L,'Suspense')
+INSERT INTO BOOK_CATEGORY (ID,NAME) VALUES (5L,'Suspense');
+#1564923264953 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+INSERT INTO BOOK_CATEGORY (ID,NAME) VALUES (6L,'Science fiction')
+INSERT INTO BOOK_CATEGORY (ID,NAME) VALUES (6L,'Science fiction');
+#1564923264953 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+INSERT INTO BOOK_CATEGORY (ID,NAME) VALUES (7L,'Romance')
+INSERT INTO BOOK_CATEGORY (ID,NAME) VALUES (7L,'Romance');
+#1564923264953 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+INSERT INTO BOOK_CATEGORY (ID,NAME) VALUES (8L,'Political thriller')
+INSERT INTO BOOK_CATEGORY (ID,NAME) VALUES (8L,'Political thriller');
+#1564923264953 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+INSERT INTO BOOK_CATEGORY (ID,NAME) VALUES (9L,'Horror')
+INSERT INTO BOOK_CATEGORY (ID,NAME) VALUES (9L,'Horror');
+#1564923264953 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+INSERT INTO BOOK_CATEGORY (ID,NAME) VALUES (10L,'Drama')
+INSERT INTO BOOK_CATEGORY (ID,NAME) VALUES (10L,'Drama');
+#1564923264954 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+INSERT INTO BOOKS (ID,BOOK_NAME,ISBN,BOOK_CATEGORY_ID) VALUES (1L,'The Diary Of Young Girl','9780553296983',1l)
+INSERT INTO BOOKS (ID,BOOK_NAME,ISBN,BOOK_CATEGORY_ID) VALUES (1L,'The Diary Of Young Girl','9780553296983',1l);
+#1564923264954 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+INSERT INTO BOOKS (ID,BOOK_NAME,ISBN,BOOK_CATEGORY_ID) VALUES (2L,'Autobiography of a Yogi','978-8190210515',1l)
+INSERT INTO BOOKS (ID,BOOK_NAME,ISBN,BOOK_CATEGORY_ID) VALUES (2L,'Autobiography of a Yogi','978-8190210515',1l);
+#1564923264955 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+INSERT INTO BOOKS (ID,BOOK_NAME,ISBN,BOOK_CATEGORY_ID) VALUES (3L,'Long Walk to Freedom','978-0316548182',1l)
+INSERT INTO BOOKS (ID,BOOK_NAME,ISBN,BOOK_CATEGORY_ID) VALUES (3L,'Long Walk to Freedom','978-0316548182',1l);
+#1564923264955 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+INSERT INTO BOOKS (ID,BOOK_NAME,ISBN,BOOK_CATEGORY_ID) VALUES (4L,'The Story of My life','978-9385609398',1l)
+INSERT INTO BOOKS (ID,BOOK_NAME,ISBN,BOOK_CATEGORY_ID) VALUES (4L,'The Story of My life','978-9385609398',1l);
+#1564923264955 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+INSERT INTO BOOKS (ID,BOOK_NAME,ISBN,BOOK_CATEGORY_ID) VALUES (5L,'Tears of Endurance','978-1499748949',10l)
+INSERT INTO BOOKS (ID,BOOK_NAME,ISBN,BOOK_CATEGORY_ID) VALUES (5L,'Tears of Endurance','978-1499748949',10l);
+#1564923264955 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+INSERT INTO BOOKS (ID,BOOK_NAME,ISBN,BOOK_CATEGORY_ID) VALUES (6L,'A Dram of Poison','978-1410759795',10l)
+INSERT INTO BOOKS (ID,BOOK_NAME,ISBN,BOOK_CATEGORY_ID) VALUES (6L,'A Dram of Poison','978-1410759795',10l);
+#1564923264956 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+INSERT INTO BOOKS (ID,BOOK_NAME,ISBN,BOOK_CATEGORY_ID) VALUES (7L,'No Drama of Mercy','978-0985736811',10l)
+INSERT INTO BOOKS (ID,BOOK_NAME,ISBN,BOOK_CATEGORY_ID) VALUES (7L,'No Drama of Mercy','978-0985736811',10l);
+#1564923264956 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+INSERT INTO BOOKS (ID,BOOK_NAME,ISBN,BOOK_CATEGORY_ID) VALUES (8L,'Raw Sprit','978-0099460275',10l)
+INSERT INTO BOOKS (ID,BOOK_NAME,ISBN,BOOK_CATEGORY_ID) VALUES (8L,'Raw Sprit','978-0099460275',10l);
+#1564923264956 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+INSERT INTO BOOKS (ID,BOOK_NAME,ISBN,BOOK_CATEGORY_ID) VALUES (9L,'The Girl on the Train','978-1-59463-366-9',5l)
+INSERT INTO BOOKS (ID,BOOK_NAME,ISBN,BOOK_CATEGORY_ID) VALUES (9L,'The Girl on the Train','978-1-59463-366-9',5l);
+#1564923264956 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+INSERT INTO BOOKS (ID,BOOK_NAME,ISBN,BOOK_CATEGORY_ID) VALUES (10L,'Rebecca','978-0-06-621108-4',5l)
+INSERT INTO BOOKS (ID,BOOK_NAME,ISBN,BOOK_CATEGORY_ID) VALUES (10L,'Rebecca','978-0-06-621108-4',5l);
+#1564923264957 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+INSERT INTO BOOKS (ID,BOOK_NAME,ISBN,BOOK_CATEGORY_ID) VALUES (11L,'The New Girl','978-0062834836',5l)
+INSERT INTO BOOKS (ID,BOOK_NAME,ISBN,BOOK_CATEGORY_ID) VALUES (11L,'The New Girl','978-0062834836',5l);
+#1564923265247 | took 7ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+/* select generatedAlias0 from BOOK_CATEGORY as generatedAlias0 where generatedAlias0.name=:param0 */ select bookcatego0_.id as id1_0_, bookcatego0_.name as name2_0_ from book_category bookcatego0_ where bookcatego0_.name=?
+/* select generatedAlias0 from BOOK_CATEGORY as generatedAlias0 where generatedAlias0.name=:param0 */ select bookcatego0_.id as id1_0_, bookcatego0_.name as name2_0_ from book_category bookcatego0_ where bookcatego0_.name='Autobiography';
+#1564923265306 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+select books0_.book_category_id as book_cat4_1_0_, books0_.id as id1_1_0_, books0_.id as id1_1_1_, books0_.book_category_id as book_cat4_1_1_, books0_.book_name as book_nam2_1_1_, books0_.isbn as isbn3_1_1_ from books books0_ where books0_.book_category_id=?
+select books0_.book_category_id as book_cat4_1_0_, books0_.id as id1_1_0_, books0_.id as id1_1_1_, books0_.book_category_id as book_cat4_1_1_, books0_.book_name as book_nam2_1_1_, books0_.isbn as isbn3_1_1_ from books books0_ where books0_.book_category_id=1;
+#1564923265339 | took 1ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+/* delete com.study.pattern.jpaPatterns.entity.Book */ delete from books where id=?
+/* delete com.study.pattern.jpaPatterns.entity.Book */ delete from books where id=1;
+#1564923265342 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+/* delete com.study.pattern.jpaPatterns.entity.Book */ delete from books where id=?
+/* delete com.study.pattern.jpaPatterns.entity.Book */ delete from books where id=2;
+#1564923265343 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+/* delete com.study.pattern.jpaPatterns.entity.Book */ delete from books where id=?
+/* delete com.study.pattern.jpaPatterns.entity.Book */ delete from books where id=3;
+#1564923265344 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+/* delete com.study.pattern.jpaPatterns.entity.Book */ delete from books where id=?
+/* delete com.study.pattern.jpaPatterns.entity.Book */ delete from books where id=4;
+#1564923265347 | took 1ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+/* delete com.study.pattern.jpaPatterns.entity.BookCategory */ delete from book_category where id=?
+/* delete com.study.pattern.jpaPatterns.entity.BookCategory */ delete from book_category where id=1;
+#1564923265349 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+/* select generatedAlias0 from BOOK_CATEGORY as generatedAlias0 where generatedAlias0.name=:param0 */ select bookcatego0_.id as id1_0_, bookcatego0_.name as name2_0_ from book_category bookcatego0_ where bookcatego0_.name=?
+/* select generatedAlias0 from BOOK_CATEGORY as generatedAlias0 where generatedAlias0.name=:param0 */ select bookcatego0_.id as id1_0_, bookcatego0_.name as name2_0_ from book_category bookcatego0_ where bookcatego0_.name='Autobiography';
+#1564923265355 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+DELETE FROM BOOKS
+DELETE FROM BOOKS;
+#1564923265357 | took 1ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+DELETE FROM BOOK_CATEGORY
+DELETE FROM BOOK_CATEGORY;
+#1564923265362 | took 3ms | rollback | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+
+;
+#1564923265371 | took 2ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+
+    drop table book_category if exists
+
+    drop table book_category if exists;
+#1564923265372 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+
+    drop table books if exists
+
+    drop table books if exists;
+#1564923265374 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+
+    drop sequence if exists book_category_generator
+
+    drop sequence if exists book_category_generator;
+#1564923265374 | took 0ms | statement | connection 0| url jdbc:p6spy:h2:mem:jpa-best-practices;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+
+    drop sequence if exists book_id_generator
+
+    drop sequence if exists book_id_generator;

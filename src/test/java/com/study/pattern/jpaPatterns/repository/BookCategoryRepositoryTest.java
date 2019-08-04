@@ -9,6 +9,7 @@ import javax.transaction.Transactional;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.DirtiesContext.ClassMode;
@@ -29,7 +30,8 @@ import lombok.extern.slf4j.Slf4j;
 				"classpath:sql/dont-use-cascadeType-remove/before.sql" }),
 		@Sql(executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD, scripts = {
 				"classpath:sql/dont-use-cascadeType-remove/after.sql" }) })
-@TestPropertySource(locations = { "classpath:application.yml" })
+@TestPropertySource(locations = { "classpath:application.properties" })
+@AutoConfigureTestDatabase(replace= AutoConfigureTestDatabase.Replace.NONE)
 @DirtiesContext(classMode = ClassMode.AFTER_EACH_TEST_METHOD)
 @Slf4j
 public class BookCategoryRepositoryTest {
