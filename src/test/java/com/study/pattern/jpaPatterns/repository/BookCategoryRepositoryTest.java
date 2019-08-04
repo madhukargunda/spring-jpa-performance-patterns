@@ -41,6 +41,9 @@ public class BookCategoryRepositoryTest {
 
 	@Autowired
 	public BookCategoryRepository bookCategoryRepository;
+	
+	@Autowired
+	public CustomBookCategoryRepository customBookCategoryRepository;
 
 	@Test
 	public void test_HappyPath() {
@@ -152,5 +155,13 @@ public class BookCategoryRepositoryTest {
 		bookCategory.removeBook(book);
 		assertThat(bookCategory2.get().getBooks().size()).isEqualTo(4);
 		bookCategory2.get().getBooks().forEach(b -> log.info("The Book : {}  ",b));
+	}
+	
+	@Transactional
+	@Test
+	public void detach_entity_from_persistent_context() {
+		Optional<BookCategory> autobiography = bookCategoryRepository.findByName("Autobiography");
+		assertThat(autobiography).isNotEmpty();
+		customBookCategoryRepository.detach(autobiography.get());	
 	}
 }
